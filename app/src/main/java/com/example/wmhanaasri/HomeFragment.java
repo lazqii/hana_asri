@@ -3,10 +3,15 @@ package com.example.wmhanaasri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,7 +19,9 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
-
+    private RecyclerView recyclerView;
+    private AktifitasAdapter adapter;
+    private ArrayList<ListAktivitas> AktifitasArrayList;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -47,18 +54,51 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        recyclerView = view.findViewById(R.id.recycle_view);
+
+        // Membuat objek ArrayList Aktifitas
+        AktifitasArrayList = new ArrayList<ListAktivitas>();
+
+        // Menambahkan data ke ArrayList Aktifitas
+        addData();
+
+        // Membuat dan mengatur adapter
+        adapter = new AktifitasAdapter(AktifitasArrayList);
+
+        // Membuat dan mengatur layout manager
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity()); // Gunakan getActivity() karena Anda berada dalam fragmen
+
+        // Mengatur layout manager dan adapter untuk RecyclerView
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+        return view;
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                             Bundle savedInstanceState) {
+//        // Inflate the layout for this fragment
+//        return inflater.inflate(R.layout.fragment_home, container, false);
+//    }
+
+    void addData(){
+        AktifitasArrayList = new ArrayList<>();
+        AktifitasArrayList.add(new ListAktivitas("Upload Menu Baru", "Gilang", "14 Oktober 2023"));
+        AktifitasArrayList.add(new ListAktivitas("Upload Menu Baru", "Gilang", "14 Oktober 2023"));
+        AktifitasArrayList.add(new ListAktivitas("Upload Menu Baru", "Gilang", "14 Oktober 2023"));
+        AktifitasArrayList.add(new ListAktivitas("Restok Bahan", "Rizqi", "15 Oktober 2023"));
+        AktifitasArrayList.add(new ListAktivitas("Restok Bahan", "Rizqi", "15 Oktober 2023"));
+        AktifitasArrayList.add(new ListAktivitas("Upload Feed IG", "Ramadhan", "16 Oktober 2023"));
+        AktifitasArrayList.add(new ListAktivitas("Upload Feed IG", "Ramadhan", "16 Oktober 2023"));
+        AktifitasArrayList.add(new ListAktivitas("Upload Feed IG", "Ramadhan", "16 Oktober 2023"));
+        AktifitasArrayList.add(new ListAktivitas("Upload Feed IG", "Ramadhan", "16 Oktober 2023"));
     }
 }
