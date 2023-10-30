@@ -4,9 +4,13 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SpinnerAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +27,8 @@ public class RekapFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Spinner spinner;
+    private SpinnerAdapter adapter;
 
     public RekapFragment() {
         // Required empty public constructor
@@ -59,6 +65,18 @@ public class RekapFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_rekap, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_rekap, container, false);
+        spinner = view.findViewById(R.id.spinnerRekap);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.add("Tugas");
+        adapter.add("Presensi");
+
+
+        spinner.setAdapter(adapter); // Mengatur adapter ke Spinner
+        spinner.setSelection(0); // Memilih item "Presensi" sebagai item default
+        return view;
     }
 }

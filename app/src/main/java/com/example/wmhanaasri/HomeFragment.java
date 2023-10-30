@@ -62,7 +62,7 @@ public class HomeFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        recyclerView = view.findViewById(R.id.recycle_view);
+        recyclerView = view.findViewById(R.id.recycle_viewHome);
 
         // Membuat objek ArrayList Aktifitas
         AktifitasArrayList = new ArrayList<ListAktivitas>();
