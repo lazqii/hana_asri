@@ -72,15 +72,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
-                android:text="Januari"
-                />
+                android:text="Januari"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
-                android:text="Februari"
-                />
+                android:text="Februari"/>
 
             <TextView
                 android:layout_width="wrap_content"

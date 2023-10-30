@@ -1,7 +1,6 @@
 package com.example.wmhanaasri;
 
 import android.view.LayoutInflater;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -18,7 +17,7 @@ public class AktifitasAdapter extends RecyclerView.Adapter<AktifitasAdapter.Akti
     @Override
     public AktifitasViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.aktivitas_activity, parent, false);
+        View view = layoutInflater.inflate(R.layout.recycle_view_home_activity, parent, false);
         return new AktifitasViewHolder(view);
     }
     @Override
