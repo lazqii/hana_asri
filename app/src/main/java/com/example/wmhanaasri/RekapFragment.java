@@ -35,7 +35,7 @@ public class RekapFragment extends Fragment {
     private Spinner spinner;
     private SpinnerAdapter adapter;
     private RecyclerView recyclerView;
-    private AktifitasAdapter adapterRecycle;
+    private AktifitasAdapter adapterRecycler;
     private ArrayList<ListAktivitas> AktifitasArrayList;
 
     public RekapFragment() {
@@ -96,14 +96,14 @@ public class RekapFragment extends Fragment {
         addData();
 
         // Membuat dan mengatur adapter
-        adapterRecycle = new AktifitasAdapter(AktifitasArrayList);
+        adapterRecycler = new AktifitasAdapter(AktifitasArrayList);
 
         // Membuat dan mengatur layout manager
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity()); // Gunakan getActivity() karena Anda berada dalam fragmen
 
         // Mengatur layout manager dan adapter untuk RecyclerView
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapterRecycle);
+        recyclerView.setAdapter(adapterRecycler);
 
         return view;
     }
