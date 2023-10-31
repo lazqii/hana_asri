@@ -3,10 +3,14 @@ package com.example.wmhanaasri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +27,9 @@ public class TugasFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private RecyclerView recyclerView;
+    private AktifitasAdapter adapter;
+    private ArrayList<ListAktivitas> AktifitasArrayList;
 
     public TugasFragment() {
         // Required empty public constructor
@@ -59,6 +66,38 @@ public class TugasFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tugas, container, false);
+//        return inflater.inflate(R.layout.fragment_tugas, container, false);
+        View view = inflater.inflate(R.layout.fragment_tugas, container, false);
+        recyclerView = view.findViewById(R.id.recycle_viewHome);
+
+        // Membuat objek ArrayList Aktifitas
+        AktifitasArrayList = new ArrayList<ListAktivitas>();
+
+        // Menambahkan data ke ArrayList Aktifitas
+        addData();
+
+        // Membuat dan mengatur adapter
+        adapter = new AktifitasAdapter(AktifitasArrayList);
+
+        // Membuat dan mengatur layout manager
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity()); // Gunakan getActivity() karena Anda berada dalam fragmen
+
+        // Mengatur layout manager dan adapter untuk RecyclerView
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+
+        return view;
+    }
+    void addData(){
+        AktifitasArrayList = new ArrayList<>();
+        AktifitasArrayList.add(new ListAktivitas("Upload Menu Baru", "Gilang", "14 Oktober 2023"));
+        AktifitasArrayList.add(new ListAktivitas("Upload Menu Baru", "Gilang", "14 Oktober 2023"));
+        AktifitasArrayList.add(new ListAktivitas("Upload Menu Baru", "Gilang", "14 Oktober 2023"));
+        AktifitasArrayList.add(new ListAktivitas("Restok Bahan", "Rizqi", "15 Oktober 2023"));
+        AktifitasArrayList.add(new ListAktivitas("Restok Bahan", "Rizqi", "15 Oktober 2023"));
+        AktifitasArrayList.add(new ListAktivitas("Upload Feed IG", "Ramadhan", "16 Oktober 2023"));
+        AktifitasArrayList.add(new ListAktivitas("Upload Feed IG", "Ramadhan", "16 Oktober 2023"));
+        AktifitasArrayList.add(new ListAktivitas("Upload Feed IG", "Ramadhan", "16 Oktober 2023"));
+        AktifitasArrayList.add(new ListAktivitas("Upload Feed IG", "Ramadhan", "16 Oktober 2023"));
     }
 }

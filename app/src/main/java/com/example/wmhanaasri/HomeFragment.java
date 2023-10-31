@@ -95,10 +95,5 @@ public class HomeFragment extends Fragment {
         AktifitasArrayList.add(new ListAktivitas("Upload Menu Baru", "Gilang", "14 Oktober 2023"));
         AktifitasArrayList.add(new ListAktivitas("Upload Menu Baru", "Gilang", "14 Oktober 2023"));
         AktifitasArrayList.add(new ListAktivitas("Restok Bahan", "Rizqi", "15 Oktober 2023"));
-        AktifitasArrayList.add(new ListAktivitas("Restok Bahan", "Rizqi", "15 Oktober 2023"));
-        AktifitasArrayList.add(new ListAktivitas("Upload Feed IG", "Ramadhan", "16 Oktober 2023"));
-        AktifitasArrayList.add(new ListAktivitas("Upload Feed IG", "Ramadhan", "16 Oktober 2023"));
-        AktifitasArrayList.add(new ListAktivitas("Upload Feed IG", "Ramadhan", "16 Oktober 2023"));
-        AktifitasArrayList.add(new ListAktivitas("Upload Feed IG", "Ramadhan", "16 Oktober 2023"));
     }
 }
