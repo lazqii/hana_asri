@@ -1,10 +1,14 @@
-package com.example.wmhanaasri;
+package adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.wmhanaasri.ListAktivitas;
+import com.example.wmhanaasri.R;
+
 import java.util.ArrayList;
 
 public class AktifitasAdapter extends RecyclerView.Adapter<AktifitasAdapter.AktifitasViewHolder> {
@@ -37,7 +41,7 @@ public class AktifitasAdapter extends RecyclerView.Adapter<AktifitasAdapter.Akti
         public AktifitasViewHolder(View itemView){
             super(itemView);
             txtJudul = (TextView) itemView.findViewById(R.id.judulTugas);
-            txtNama = (TextView) itemView.findViewById(R.id.namaKaryawan);
+            txtNama = (TextView) itemView.findViewById(R.id.txtnamaKaryawan);
             txtTenggat = (TextView) itemView.findViewById(R.id.tenggat);
         }
     }
